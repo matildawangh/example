@@ -17,8 +17,16 @@
 
 ## APPROACH
 
-* Z
-* 
+* Bin the 'age'. Do histogram first to see distribution. And then encode it.
+* Proposed bin size
+* 0 -18
+* 19 - 30
+* 30 - 50
+* 50 - 65
+* 65 - 72
+* 72 - 80
+* Some nulls in BMI (two datasets 1. null dropped, 2. null replaced with some value - mean is good 28.1)
+* 1544 Unknown Smokers. What do we do? Can we put negative one. 
 
 ## FUTURE DEVELOPMENT AND ADDITIONAL QUESTIONS
 1. ?
