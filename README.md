@@ -39,4 +39,4 @@ Despite the inherent challenges posed by an unbalanced dataset and lower perform
 
 Feature importance analysis remains instrumental in understanding the key factors influencing stroke risk, despite the dataset's imbalance. By identifying the most significant predictors, healthcare professionals can prioritize interventions and preventive measures for individuals at higher risk.
 
-In conclusion, while acknowledging the limitations imposed by data imbalance and lower confusion matrix results, the developed models still offer valuable insights into stroke prediction. Further efforts, such as data augmentation techniques and model optimization, are warranted to enhance the models' performance and enable more accurate risk assessment. These endeavors are crucial in advancing preventive healthcare strategies aimed at reducing the burden of stroke-related morbidity and mortality.
+In conclusion, further efforts, such as data augmentation techniques and model optimization, or even a new data set, are warranted to enhance the models' performance and enable more accurate risk assessment. 
