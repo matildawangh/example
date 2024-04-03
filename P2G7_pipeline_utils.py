@@ -4,15 +4,11 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
-from sklearn.pipeline import Pipeline
-#from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import LogisticRegression
 
-def preprocess_healthcare_data(healthcare_df):
+def healthcare_data_drop_na(healthcare_df):
     """
-    Written for healthcare data; will drop null values and 
-    split into training and testing sets. Uses stroke
-    as the target column.
+    Written for healthcare data; will drop null values.
     """
     raw_num_df_rows = len(healthcare_df)
     healthcare_df = healthcare_df.dropna()
@@ -21,106 +17,8 @@ def preprocess_healthcare_data(healthcare_df):
         (raw_num_df_rows - remaining_num_df_rows) / raw_num_df_rows * 100
     )
     print(f"Dropped {round(percent_na,2)}% rows")
-    X = healthcare_df.drop(columns='stroke')
-    # y = healthcare_df['stroke'].values.reshape(-1, 1)
-    y = healthcare_df['stroke']
-    return train_test_split(X, y)
-
-def preprocess_healthcare_data_keep_na(healthcare_df):
-    """
-    Written for healthcare data; will split into training
-    and testing sets. Uses stroke as the target column.
-    """
-    X = healthcare_df.drop(columns='stroke')
-    # y = healthcare_df['stroke'].values.reshape(-1, 1)
-    y = healthcare_df['stroke']
-    return train_test_split(X, y)
-
-def r2_adj(x, y, model):
-    """
-    Calculates adjusted r-squared values given an X variable, 
-    predicted y values, and the model used for the predictions.
-    """
-    r2 = model.score(x,y)
-    n_cols = x.shape[1]
-    return 1 - (1 - r2) * (len(y) - 1) / (len(y) - n_cols - 1)
-
-def check_metrics(X_test, y_test, model):
-    # Use the pipeline to make predictions
-    y_pred = model.predict(X_test)
-
-    # Print out the MSE, r-squared, and adjusted r-squared values
-    print(f"Mean Squared Error: {mean_squared_error(y_test, y_pred)}")
-    print(f"R-squared: {r2_score(y_test, y_pred)}")
-    print(f"Adjusted R-squared: {r2_adj(X_test, y_test, model)}")
-
-    return r2_adj(X_test, y_test, model)
-
-def get_best_pipeline(pipeline, pipeline2, healthcare_df):
-    """
-    Accepts two pipelines and healthcare data.
-    Uses two different preprocessing functions to 
-    split the data for training the different 
-    pipelines, then evaluates which pipeline performs
-    best.
-    """
-    # Apply the preprocess_healthcare_data step
-    X_train, X_test, y_train, y_test = preprocess_healthcare_data(healthcare_df)
-
-    # Fit the first pipeline
-    pipeline.fit(X_train, y_train)
-
-    print("Testing dropped NAs")
-    # Print out the MSE, r-squared, and adjusted r-squared values
-    # and collect the adjusted r-squared for the first pipeline
-    p1_adj_r2 = check_metrics(X_test, y_test, pipeline)
-
-    # Apply the preprocess_healthcare_data_keep_na step
-    X_train, X_test, y_train, y_test = preprocess_healthcare_data_keep_na(healthcare_df)
-
-    # Fit the second pipeline
-    pipeline2.fit(X_train, y_train)
-
-    print("Testing no dropped data")
-    # Print out the MSE, r-squared, and adjusted r-squared values
-    # and collect the adjusted r-squared for the second pipeline
-    p2_adj_r2 = check_metrics(X_test, y_test, pipeline2)
-
-    # Compare the adjusted r-squared for each pipeline and 
-    # return the best model
-    if p2_adj_r2 > p1_adj_r2:
-        print("Returning no dropped data pipeline")
-        return pipeline2
-    else:
-        print("Returning dropped NAs pipeline")
-        return pipeline
-    
-def healthcare_model_generator(healthcare_df):
-    """
-    Defines a series of steps that will preprocess data,
-    split data, and train a model for predicting stroke 
-    using linear regression. It will return the trained model
-    and print the mean squared error, r-squared, and adjusted
-    r-squared scores.
-    """
-    # Create a list of steps for a pipeline that will one hot encode and scale data
-    # Each step should be a tuple with a name and a function
-    steps = [("One hot encode", OneHotEncoder(handle_unknown="ignore")), 
-             ("Scale", StandardScaler(with_mean=False)), 
-             ("Logistic Regression", LogisticRegression(random_state=7, max_iter=120))] 
-
-    # Create a pipeline object
-    pipeline = Pipeline(steps)
-
-    # Create a second pipeline object
-    pipeline2 = Pipeline(steps)
-
-    # Get the best pipeline
-    pipeline = get_best_pipeline(pipeline, pipeline2, healthcare_df)
-
-    # Return the trained model
-    return pipeline
-
+    return healthcare_df
+   
 def train_test_split_healthcare(df_encoded):
     X = df_encoded.drop(columns='stroke')
     y = df_encoded['stroke']
@@ -230,14 +128,3 @@ def encode_categorical(df_final, encoders):
 
 if __name__ == "__main__":
     print("This script should not be run directly! Import these functions for use in another file.")
-
-"""
-def build_target_encoder(y):
-    encode_y = OneHotEncoder(drop='first', sparse_output=False)
-    encode_y.fit(y)
-    return encode_y
-
-def encode_target(y, encode_y):
-    
-    return np.ravel(encode_y.transform(y))
-"""    
