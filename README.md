@@ -44,4 +44,17 @@ The primary objective of this project is to develop predictive models to identif
 2. Under Sample model is less Precise but more Sensitive i.e. higher ratio of False Positives to False Negative
 3. In healthcare data, we want more Sensitivity compared to Precision.
 4. For data set with unbalanced target, tree based algorithms and boosting algorithms are ideal models.
-5. Amongst the Decision Tree models, Random Forest and Extra Trees Classifier has slightly higher Balanced Accuracy score. 
+5. Amongst the Decision Tree models, Random Forest and Extra Trees Classifier has slightly higher Balanced Accuracy score.
+
+## DETAILED RESULTS
+![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/5e4eef81-493d-456f-8ca6-58cf7d18c81e)
+
+
+![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/23d76242-c2a0-42b8-9315-1216b0e81da1)
+
+## DATASET PROPERTIES
+![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/ea3c3af3-f136-4443-9cfe-7a13fda28e8b)
+
+![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/82c457a4-bda9-43b0-9ce8-f3bbed99f0b3)
+
+      ![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/7d452e62-247c-4ed7-a3db-1a892c413e77)
