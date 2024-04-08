@@ -57,4 +57,7 @@ The primary objective of this project is to develop predictive models to identif
 
 ![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/82c457a4-bda9-43b0-9ce8-f3bbed99f0b3)
 
-      ![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/7d452e62-247c-4ed7-a3db-1a892c413e77)
+![image](https://github.com/mvenegas011/Project2_Group7/assets/33967792/250c0097-d66d-42d3-a958-6466dc325b43)
+
+
+
