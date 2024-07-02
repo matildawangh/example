@@ -54,8 +54,8 @@ Each model was evaluated using metrics such as Mean Squared Error (MSE), R-squar
 
 ## Results and Conclusions
 
-- **Linear Regression** provided a solid baseline with an R-squared value of 0.75.
-- **Random Forest Regression** improved the prediction accuracy with an R-squared value of 0.82.
-- **XGBoost Regression** achieved the highest accuracy with an R-squared value of 0.85.
+- **Linear Regression** provided a solid baseline with an R-squared value of xxx.
+- **Random Forest Regression** improved the prediction accuracy with an R-squared value of xxx.
+- **XGBoost Regression** achieved the highest accuracy with an R-squared value of xxx.
 
 Feature importance analysis indicated that past performance in specific events is a key predictor of medal counts. The models suggest an increase in the total medal count for the USA in the 2024 Olympics compared to 2016 and 2020.
