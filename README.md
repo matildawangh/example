@@ -6,6 +6,8 @@ The Summer Olympic Games represent a pinnacle of international sports competitio
 
 The primary objective of this project is to develop predictive models that can estimate the medal counts for the USA. By leveraging machine learning algorithms, specifically **LinearRegression**, **RandomForestRegressor**, and **XGBoostRegression**, the goal is to achieve precise predictions. Additionally, feature importance analysis is conducted to identify the most significant predictors of medal success among the available attributes.
 
+
+
 ## OVERVIEW OF THE DATA COLLECTION, CLEAN UP AND EXPLORATION PROCESS 
 
 * The dataset used for this project is sourced from [Kaggle](https://www.kaggle.com/datasets/the-guardian/olympic-games?select=summer.csv)
@@ -21,6 +23,8 @@ The primary objective of this project is to develop predictive models that can e
 
 #### Data Splitting
 - Splitting the dataset into training and testing sets using the `train_test_split` function.
+
+
 
 ## Model Training and Evaluation
 
@@ -45,6 +49,8 @@ Each model was evaluated using metrics such as Mean Squared Error (MSE), R-squar
 
 ### XGBoost Regressor
 - Achieved the highest accuracy among the evaluated models with the best R-squared value.
+
+
 
 ## Results and Conclusions
 
