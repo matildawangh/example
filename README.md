@@ -1,10 +1,10 @@
-# [PROJECT 2 - GROUP 7]
+# [PROJECT 2 - GROUP 1]
 
 ## EXECUTIVE SUMMARY: Overview and Objectives
 
-Stroke is a significant global health concern, ranking as the second leading cause of death worldwide, according to the World Health Organization (WHO). Predicting the likelihood of stroke occurrence in patients can aid in preventive healthcare measures. This project utilizes a dataset comprising various demographic and health-related parameters to predict the likelihood of stroke occurrence in individuals. Parameters such as age, gender, presence of hypertension, heart disease, marital status, occupation, residence type, average glucose level, BMI, and smoking status are considered for prediction.
+The Summer Olympic Games represent a pinnacle of international sports competition, where athletes from around the world compete for glory and national pride. This project aims to predict the medal counts for the USA in the Summer Olympics for the years 2016, 2020, and 2024. Using historical data and machine learning models, the objective is to provide accurate predictions of the number of gold, silver, and bronze medals the USA will secure in these Olympic events.
 
-The primary objective of this project is to develop predictive models to identify individuals at risk of stroke based on their demographic and health-related attributes. By leveraging machine learning algorithms, specifically logistic regression and random forest classification, the aim is to achieve accurate predictions. Additionally, feature importance analysis is conducted to identify the most significant predictors of stroke risk among the available attributes.
+The primary objective of this project is to develop predictive models that can estimate the medal counts for the USA. By leveraging machine learning algorithms, specifically **LinearRegression**, **RandomForestRegressor**, and **XGBoostRegression**, the goal is to achieve precise predictions. Additionally, feature importance analysis is conducted to identify the most significant predictors of medal success among the available attributes.
 
 ## OVERVIEW OF THE DATA COLLECTION, CLEAN UP AND EXPLORATION PROCESS 
 
